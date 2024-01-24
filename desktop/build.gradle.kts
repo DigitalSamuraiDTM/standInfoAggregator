@@ -1,4 +1,3 @@
-import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
@@ -6,7 +5,7 @@ plugins {
     id(Dependencies.Plugins.compose).version(Versions.compose)
 }
 
-group = Namespaces.cealChronicler
+group = Namespaces.cealChroniclerAndroid
 version = Versions.cealChronicler
 
 kotlin {

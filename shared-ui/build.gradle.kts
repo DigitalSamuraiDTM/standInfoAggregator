@@ -3,8 +3,6 @@ plugins {
     kotlin(Dependencies.Plugins.kotlinMultiplatform)
     id(Dependencies.Plugins.androidLibrary)
     id(Dependencies.Plugins.compose).version(Versions.compose)
-    id(Dependencies.Plugins.icerockMultiplatformResources)
-        .version(Versions.icerockResources)
 }
 
 android {
@@ -23,6 +21,7 @@ android {
 dependencies {
     implementation(Dependencies.Compose.uiGraphics)
     implementation(Dependencies.Compose.material)
+    implementation("androidx.compose.material3:material3:1.1.2")
 }
 
 kotlin {
@@ -35,15 +34,17 @@ kotlin {
 
     sourceSets {
         val commonMain by getting {
+            @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
             dependencies {
                 implementation(project(":shared"))
                 implementation(Dependencies.eventBus)
                 implementation(Dependencies.Koin.core)
 
+                api(compose.animation)
                 api(compose.foundation)
                 api(compose.runtime)
                 api(compose.foundation)
-                api(compose.material)
+                api(compose.material3)
                 api(compose.materialIconsExtended)
                 api(compose.ui)
                 api(compose.uiTooling)
@@ -52,7 +53,6 @@ kotlin {
                 api(Dependencies.Moko.resourcesCompose)
             }
         }
-        val commonTest by getting
         val androidMain by getting {
             dependencies {
                 api(Dependencies.Compose.runtime)
@@ -63,6 +63,6 @@ kotlin {
     }
 }
 
-multiplatformResources {
-    multiplatformResourcesPackage = Namespaces.cealChronicler
-}
+//multiplatformResources {
+//    multiplatformResourcesPackage = Namespaces.standAggregator
+//}

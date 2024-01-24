@@ -9,7 +9,7 @@ kotlin {
 
     jvm("desktop") {
         compilations.all {
-            kotlinOptions.jvmTarget = "11"
+            kotlinOptions.jvmTarget = Versions.jvm
         }
     }
 
@@ -26,26 +26,19 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(Dependencies.eventBus)
-                implementation(Dependencies.Koin.core)
-                implementation(Dependencies.serialization)
-            }
-        }
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-                implementation(Dependencies.Koin.test)
+//                implementation(Dependencies.eventBus)
+//                implementation(Dependencies.Koin.core)
+//                implementation(Dependencies.serialization)
             }
         }
         val androidMain by getting
-        val androidTest by getting
     }
 }
 
 android {
     namespace = "com.digitalsamurai.standaggregator"
-    compileSdk = 32
+    compileSdk = 34
     defaultConfig {
-        minSdk = 21
+        minSdk = 24
     }
 }
