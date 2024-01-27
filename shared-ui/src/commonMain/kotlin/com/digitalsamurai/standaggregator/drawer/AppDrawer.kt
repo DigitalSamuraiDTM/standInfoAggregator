@@ -39,23 +39,7 @@ fun AppDrawer(modifier: Modifier = Modifier) {
         drawerContent = { AppDrawerContent(AppDrawerContentState(AppDrawerElement.SETTINGS), {}) },
         drawerState = drawerState,
         modifier = Modifier.fillMaxSize(),
-        content = {
-            Button(
-                modifier = Modifier.wrapContentWidth().wrapContentHeight(),
-                onClick = {
-                    drawerCoroutineScope.launch {
-                        drawerState.open()
-                    }
-                },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Transparent,
-                    contentColor = Color.Black
-                ), border = BorderStroke(0.dp, Color.Transparent),
-                shape = RectangleShape,
-            ) {
-                Image(Icons.Default.Menu, contentDescription = null)
-            }
-        },
+        content = {},
     )
 }
 

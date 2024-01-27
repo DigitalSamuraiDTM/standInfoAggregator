@@ -19,7 +19,6 @@ fun HidDevicesScreen(navigator: (newScreen: Screen) -> Unit, modifier: Modifier 
 
 
     Row(modifier = modifier.fillMaxSize()) {
-        LirDevices(LirDevicesViewState.preview())
         AvailableHidDevices()
     }
 }
