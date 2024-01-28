@@ -1,7 +1,6 @@
-package com.digitalsamurai.standaggregator.hiddevices.lir.device
+package com.digitalsamurai.standaggregator.screens.hiddevices.lir.device
 
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -74,6 +73,7 @@ data class LirDeviceViewState(
 
     companion object {
         fun preview(): LirDeviceViewState = LirDeviceViewState("LIR-919", Status.AWAIT)
+        fun default(): LirDeviceViewState = LirDeviceViewState("", Status.AWAIT)
     }
 }
 

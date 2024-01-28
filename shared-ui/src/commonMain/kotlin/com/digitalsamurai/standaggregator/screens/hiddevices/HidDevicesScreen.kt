@@ -1,16 +1,12 @@
-package com.digitalsamurai.standaggregator.hiddevices
+package com.digitalsamurai.standaggregator.screens.hiddevices
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.digitalsamurai.standaggregator.Screen
-import com.digitalsamurai.standaggregator.hiddevices.lir.LirDevices
-import com.digitalsamurai.standaggregator.hiddevices.lir.LirDevicesViewState
-import com.digitalsamurai.standaggregator.hiddevices.lir.device.LirDevice
-import com.digitalsamurai.standaggregator.hiddevices.lir.device.LirDeviceViewState
+import com.digitalsamurai.standaggregator.screens.hiddevices.lir.LirDevicesViewState
 
 @Composable
 fun HidDevicesScreen(navigator: (newScreen: Screen) -> Unit, modifier: Modifier = Modifier) {
@@ -31,7 +27,6 @@ data class HidDevicesScreenState(
         fun preview(): HidDevicesScreenState = HidDevicesScreenState(LirDevicesViewState.preview())
     }
 }
-
 
 
 @Composable

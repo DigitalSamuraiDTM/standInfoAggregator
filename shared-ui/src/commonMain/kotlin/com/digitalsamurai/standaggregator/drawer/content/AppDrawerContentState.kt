@@ -1,11 +1,19 @@
 package com.digitalsamurai.standaggregator.drawer.content
 
-public data class AppDrawerContentState(
-    val selectedElement: AppDrawerElement
-)
+data class AppDrawerContentState(
+    val selectedElement: Element
+) {
 
-enum class AppDrawerElement {
-    HID_DEVICES,
-    STAND,
-    SETTINGS,
+
+    enum class Element {
+        HID_DEVICES,
+        STAND,
+        SETTINGS,
+    }
+
+    companion object {
+        fun preview(): AppDrawerContentState = AppDrawerContentState(Element.HID_DEVICES)
+        fun default(): AppDrawerContentState = AppDrawerContentState(Element.HID_DEVICES)
+    }
 }
+

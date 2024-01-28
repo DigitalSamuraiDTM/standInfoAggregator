@@ -18,31 +18,34 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-internal fun AppDrawerContent(state: AppDrawerContentState, onElementSelected: (AppDrawerElement) -> (Unit)) {
+internal fun AppDrawerContent(
+    state: AppDrawerContentState,
+    onElementSelected: (AppDrawerContentState.Element) -> (Unit)
+) {
     Column {
         Spacer(Modifier.height(10.dp))
         NavigationDrawerItem(
             icon = { Icon(Icons.Default.DeviceHub, contentDescription = null) },
-            label = { Text("HID Devices awdawda") },
-            selected = true,
+            label = { Text("HID Devices") },
+            selected = state.selectedElement == AppDrawerContentState.Element.HID_DEVICES,
             onClick = {
-                onElementSelected(AppDrawerElement.HID_DEVICES)
+                onElementSelected(AppDrawerContentState.Element.HID_DEVICES)
             }
         )
         NavigationDrawerItem(
             icon = { Icon(Icons.Default.ElectricMeter, contentDescription = null) },
             label = { Text("Stand") },
-            selected = false,
+            selected = state.selectedElement == AppDrawerContentState.Element.STAND,
             onClick = {
-                onElementSelected(AppDrawerElement.STAND)
+                onElementSelected(AppDrawerContentState.Element.STAND)
             }
         )
         NavigationDrawerItem(
             icon = { Icon(Icons.Default.Settings, contentDescription = null) },
             label = { Text("Settings") },
-            selected = false,
+            selected = state.selectedElement == AppDrawerContentState.Element.SETTINGS,
             onClick = {
-                onElementSelected(AppDrawerElement.SETTINGS)
+                onElementSelected(AppDrawerContentState.Element.SETTINGS)
             }
         )
     }

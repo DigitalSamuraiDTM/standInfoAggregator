@@ -1,10 +1,10 @@
-package com.digitalsamurai.standaggregator.hiddevices.lir
+package com.digitalsamurai.standaggregator.screens.hiddevices.lir
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.digitalsamurai.standaggregator.hiddevices.lir.device.LirDevice
-import com.digitalsamurai.standaggregator.hiddevices.lir.device.LirDeviceViewState
+import com.digitalsamurai.standaggregator.screens.hiddevices.lir.device.LirDevice
+import com.digitalsamurai.standaggregator.screens.hiddevices.lir.device.LirDeviceViewState
 
 @Composable
 fun LirDevices(state: LirDevicesViewState, modifier: Modifier) {
@@ -26,6 +26,12 @@ data class LirDevicesViewState(
             LirDeviceViewState.preview(),
             LirDeviceViewState.preview(),
             LirDeviceViewState.preview()
+        )
+
+        fun default(): LirDevicesViewState = LirDevicesViewState(
+            LirDeviceViewState.default(),
+            LirDeviceViewState.default(),
+            LirDeviceViewState.default()
         )
     }
 }
