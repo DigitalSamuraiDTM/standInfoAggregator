@@ -23,8 +23,8 @@ object Versions{
 }
 
 object Namespaces{
-    const val cealChronicler = "com.tri_tail.ceal_chronicler"
-    const val cealChroniclerAndroid = "$cealChronicler.android"
+    const val standInfoAggregator = "com.digitalsamurai.standaggregator"
+    const val standInfoAggregatorAndroid = "$standInfoAggregator.android"
 }
 
 object Dependencies{

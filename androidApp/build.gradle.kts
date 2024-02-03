@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = Namespaces.cealChroniclerAndroid
+    namespace = Namespaces.standInfoAggregatorAndroid
     compileSdk = Versions.targetSdk
     defaultConfig {
-        applicationId = Namespaces.cealChroniclerAndroid
+        applicationId = Namespaces.standInfoAggregatorAndroid
         minSdk = Versions.minSdk
         targetSdk = Versions.targetSdk
         versionCode = 1

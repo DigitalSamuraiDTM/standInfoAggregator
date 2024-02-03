@@ -5,7 +5,7 @@ plugins {
     id(Dependencies.Plugins.compose).version(Versions.compose)
 }
 
-group = Namespaces.cealChroniclerAndroid
+group = Namespaces.standInfoAggregatorAndroid
 version = Versions.cealChronicler
 
 kotlin {
@@ -27,9 +27,17 @@ kotlin {
                 api(compose.ui)
                 api(compose.materialIconsExtended)
 
+
+                implementation("com.google.dagger:dagger:2.43")
+                implementation("com.google.dagger:dagger-compiler:2.43")
+
                 implementation(project(":shared"))
                 implementation(project(":shared-ui"))
-                implementation(Dependencies.Koin.core)
+
+                implementation("org.usb4java:usb4java:1.3.0")
+                implementation("org.hid4java:hid4java:0.7.0")
+
+
             }
         }
     }
@@ -42,7 +50,7 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "Ceal_Chronicler"
             macOS {
-                bundleID = Namespaces.cealChronicler
+                bundleID = Namespaces.standInfoAggregator
             }
         }
     }
