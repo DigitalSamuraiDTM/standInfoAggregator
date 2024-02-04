@@ -62,7 +62,3 @@ kotlin {
         val desktopMain by getting
     }
 }
-
-//multiplatformResources {
-//    multiplatformResourcesPackage = Namespaces.standAggregator
-//}

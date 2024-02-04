@@ -1,8 +1,16 @@
+import org.gradle.api.internal.artifacts.dependencies.DefaultExternalModuleDependency
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     kotlin(Dependencies.Plugins.kotlinMultiplatform)
     id(Dependencies.Plugins.compose).version(Versions.compose)
+    kotlin("kapt")
+
+}
+
+
+kapt {
+    generateStubs = true
 }
 
 group = Namespaces.standInfoAggregatorAndroid
@@ -27,9 +35,9 @@ kotlin {
                 api(compose.ui)
                 api(compose.materialIconsExtended)
 
+                configurations.get("kapt").dependencies.add(DefaultExternalModuleDependency("com.google.dagger", "dagger-compiler", "2.44.2"))
+                implementation("com.google.dagger:dagger:2.44.2")
 
-                implementation("com.google.dagger:dagger:2.43")
-                implementation("com.google.dagger:dagger-compiler:2.43")
 
                 implementation(project(":shared"))
                 implementation(project(":shared-ui"))
@@ -45,12 +53,18 @@ kotlin {
 
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "com.digitalsamurai.standaggregator.desktop.MainKt"
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "Ceal_Chronicler"
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Exe)
+            packageName = "StandInfo"
             macOS {
                 bundleID = Namespaces.standInfoAggregator
+            }
+
+            buildTypes.release {
+                proguard {
+                    configurationFiles.from("compose-desktop.pro")
+                }
             }
         }
     }

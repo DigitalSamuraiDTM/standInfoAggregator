@@ -4,6 +4,7 @@ plugins {
     kotlin(Dependencies.Plugins.serialization) version Versions.Plugins.serialization
 }
 
+
 kotlin {
     android()
 
@@ -26,12 +27,12 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-//                implementation(Dependencies.eventBus)
-//                implementation(Dependencies.Koin.core)
-//                implementation(Dependencies.serialization)
+
             }
         }
         val androidMain by getting
+
+        val desktopMain by getting
     }
 }
 

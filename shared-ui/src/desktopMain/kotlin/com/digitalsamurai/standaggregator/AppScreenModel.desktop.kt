@@ -7,9 +7,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 
 internal class AppScreenModelImpl : AppScreenModel {
-    init {
-        println("INITED")
-    }
+
+
 
     private val _screenState = MutableStateFlow<AppScreenState>(AppScreenState.default())
     override val screenState: StateFlow<AppScreenState> = _screenState

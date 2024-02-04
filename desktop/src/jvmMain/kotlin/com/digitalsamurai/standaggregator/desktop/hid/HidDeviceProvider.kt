@@ -1,5 +1,6 @@
 package com.digitalsamurai.standaggregator.desktop.hid
 
+import com.digitalsamurai.standaggregator.desktop.hid.models.HidDevice
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import org.hid4java.HidManager
@@ -8,9 +9,7 @@ import org.hid4java.HidServicesSpecification
 import org.hid4java.ScanMode
 import org.hid4java.event.HidServicesEvent
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
 class HidDeviceProvider @Inject constructor() {
 
     private val spec = HidServicesSpecification().apply {
