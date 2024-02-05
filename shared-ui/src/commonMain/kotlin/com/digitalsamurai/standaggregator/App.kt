@@ -44,8 +44,6 @@ fun App() {
         val screenModel = remember { buildAppScreenModel() }
         val appState = screenModel.screenState.collectAsState().value
 
-
-
         Surface(shape = RectangleShape, modifier = baseModifier) {
             Row {
                 AppDrawerContent(

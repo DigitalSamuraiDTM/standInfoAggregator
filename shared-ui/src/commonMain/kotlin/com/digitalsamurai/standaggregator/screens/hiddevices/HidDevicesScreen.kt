@@ -41,7 +41,7 @@ fun HidDevicesScreen(navigator: (newScreen: Screen) -> Unit, modifier: Modifier 
                 )
         ) {
             items(state.hidDevicesList) {
-                HidDeviceView(it)
+                HidDeviceView(it) {}
             }
         }
 }

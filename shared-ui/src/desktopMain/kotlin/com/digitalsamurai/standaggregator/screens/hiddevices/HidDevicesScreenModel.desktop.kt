@@ -16,15 +16,18 @@ internal class HidDevicesScreenModelImpl(private val scope: CoroutineScope): Hid
     override val screenState: StateFlow<HidDevicesScreenState>
         get() = _screenState
 
-
     init {
         observeHidDevices()
     }
 
     private fun observeHidDevices() = scope.launch {
         appComponent.getHidDeviceProvider().hidDevices.collect {devices ->
-            println("COLLECTED LIST: ${devices.joinToString(", ")}")
-            _screenState.value = _screenState.value.copy(hidDevicesList = devices.map { HidDeviceViewState(it.manufacturer ?: "No name") })
+            _screenState.value = _screenState.value.copy(hidDevicesList = devices.map {
+                HidDeviceViewState(
+                    product = it.product ?: "Unknown product",
+                    manufacturer = it.manufacturer
+                )
+            })
         }
     }
 }
