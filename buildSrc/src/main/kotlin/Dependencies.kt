@@ -1,5 +1,5 @@
 object Versions{
-    const val cealChronicler = "1.0.0"
+    const val standInfoAggregator = "1.0.0"
     object Plugins{
         const val android = "7.2.2"
         const val kotlin = "1.7.10"

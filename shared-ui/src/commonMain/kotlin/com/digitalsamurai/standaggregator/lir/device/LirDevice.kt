@@ -1,4 +1,4 @@
-package com.digitalsamurai.standaggregator.screens.hiddevices.lir.device
+package com.digitalsamurai.standaggregator.lir.device
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Column

@@ -1,4 +1,4 @@
-package com.digitalsamurai.standaggregator.desktop.hid.models
+package com.digitalsamurai.standaggregator.desktoplogic.hid.models
 
 public data class HidDevice(
     val manufacturer: String?,

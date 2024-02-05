@@ -1,4 +1,4 @@
-package com.digitalsamurai.standaggregator.desktop.di
+package com.digitalsamurai.standaggregator.desktoplogic.di
 
 import javax.inject.Scope
 

@@ -1,20 +1,17 @@
-import org.gradle.api.internal.artifacts.dependencies.DefaultExternalModuleDependency
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     kotlin(Dependencies.Plugins.kotlinMultiplatform)
     id(Dependencies.Plugins.compose).version(Versions.compose)
     kotlin("kapt")
-
 }
-
 
 kapt {
     generateStubs = true
 }
 
 group = Namespaces.standInfoAggregatorAndroid
-version = Versions.cealChronicler
+version = Versions.standInfoAggregator
 
 kotlin {
     jvm {
@@ -35,16 +32,8 @@ kotlin {
                 api(compose.ui)
                 api(compose.materialIconsExtended)
 
-                configurations.get("kapt").dependencies.add(DefaultExternalModuleDependency("com.google.dagger", "dagger-compiler", "2.44.2"))
-                implementation("com.google.dagger:dagger:2.44.2")
-
-
                 implementation(project(":shared"))
                 implementation(project(":shared-ui"))
-
-                implementation("org.usb4java:usb4java:1.3.0")
-                implementation("org.hid4java:hid4java:0.7.0")
-
 
             }
         }

@@ -1,8 +1,8 @@
-package com.digitalsamurai.standaggregator.desktop.di
+package com.digitalsamurai.standaggregator.desktoplogic.di
 
-import com.digitalsamurai.standaggregator.desktop.Environment
-import com.digitalsamurai.standaggregator.desktop.di.components.AppComponent
-import com.digitalsamurai.standaggregator.desktop.di.components.DaggerAppComponent
+import com.digitalsamurai.standaggregator.desktoplogic.di.components.AppComponent
+import com.digitalsamurai.standaggregator.desktoplogic.di.components.DaggerAppComponent
+import com.digitalsamurai.standaggregator.desktoplogic.di.components.Environment
 
 public object AppComponentHolder {
 

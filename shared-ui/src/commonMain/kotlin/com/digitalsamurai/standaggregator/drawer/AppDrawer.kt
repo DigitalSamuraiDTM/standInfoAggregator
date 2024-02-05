@@ -31,7 +31,7 @@ fun AppDrawer(state: AppDrawerViewState, onItemSelected: (AppDrawerContentState.
         },
         drawerState = drawerState,
         modifier = Modifier.fillMaxSize(),
-        content = {},
+        content = {}
     )
 }
 

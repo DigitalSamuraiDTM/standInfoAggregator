@@ -1,4 +1,3 @@
-
 plugins {
     kotlin(Dependencies.Plugins.kotlinMultiplatform)
     id(Dependencies.Plugins.androidLibrary)
@@ -59,6 +58,10 @@ kotlin {
                 api(Dependencies.Compose.ui)
             }
         }
-        val desktopMain by getting
+        val desktopMain by getting {
+            dependencies {
+                implementation(project(":desktop-logic"))
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
-package com.digitalsamurai.standaggregator.desktop.hid
+package com.digitalsamurai.standaggregator.desktoplogic.hid
 
-import com.digitalsamurai.standaggregator.desktop.hid.models.HidDevice
+import com.digitalsamurai.standaggregator.desktoplogic.hid.models.HidDevice
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import org.hid4java.HidManager

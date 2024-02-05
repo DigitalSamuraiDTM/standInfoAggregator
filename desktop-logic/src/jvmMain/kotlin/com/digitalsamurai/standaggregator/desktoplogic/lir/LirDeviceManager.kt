@@ -1,6 +1,6 @@
-package com.digitalsamurai.standaggregator.desktop.lir
+package com.digitalsamurai.standaggregator.desktoplogic.lir
 
-import com.digitalsamurai.standaggregator.desktop.hid.HidDeviceProvider
+import com.digitalsamurai.standaggregator.desktoplogic.hid.HidDeviceProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
