@@ -1,17 +1,26 @@
 package com.digitalsamurai.standaggregator
 
+import com.digitalsamurai.standaggregator.desktoplogic.di.AppComponentHolder
+import com.digitalsamurai.standaggregator.desktoplogic.lir.LirDeviceManager
 import com.digitalsamurai.standaggregator.drawer.AppDrawerViewState
 import com.digitalsamurai.standaggregator.drawer.content.AppDrawerContentState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
+import kotlin.math.log
 
 internal class AppScreenModelImpl : AppScreenModel {
 
+    private val lirDeviceManager: LirDeviceManager = AppComponentHolder.get().getLirDeviceManager()
 
+    private val logger = AppComponentHolder.get().getLoggerFactory().buildLogger(this)
 
     private val _screenState = MutableStateFlow<AppScreenState>(AppScreenState.default())
     override val screenState: StateFlow<AppScreenState> = _screenState
+
+    init {
+        logger.i("APP SCREEN MODEL INITED")
+    }
 
     override fun onScreenChanged(newScreen: Screen) {
         _screenState.update { previous ->

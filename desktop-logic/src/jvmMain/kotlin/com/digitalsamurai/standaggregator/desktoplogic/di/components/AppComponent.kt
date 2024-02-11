@@ -2,23 +2,33 @@ package com.digitalsamurai.standaggregator.desktoplogic.di.components
 
 import com.digitalsamurai.standaggregator.desktoplogic.di.AppScope
 import com.digitalsamurai.standaggregator.desktoplogic.hid.HidDeviceProvider
+import com.digitalsamurai.standaggregator.desktoplogic.lir.LirDeviceManager
+import com.digitalsamurai.standaggregator.desktoplogic.logging.LoggerFactory
 import dagger.BindsInstance
 import dagger.Component
+import java.util.logging.Logger
 
-@Component
+@AppScope
+@Component(modules = [AppModule::class])
 public interface AppComponent {
 
 
     @AppScope
-    fun getHidDeviceProvider(): HidDeviceProvider
+    public fun getHidDeviceProvider(): HidDeviceProvider
+
+    @AppScope
+    public fun getLirDeviceManager(): LirDeviceManager
+
+    @AppScope
+    public fun getLoggerFactory(): LoggerFactory
 
 
     @Component.Factory
-    interface Factory{
-        fun build(@BindsInstance environment: Environment): AppComponent
+    public interface Factory{
+        public fun build(@BindsInstance environment: Environment): AppComponent
     }
 }
 
 public class Environment(
-    val name: String
+    public val name: String
 )

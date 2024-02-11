@@ -7,8 +7,10 @@ plugins {
 }
 kotlin {
     jvm {
+
         withJava()
         compilations.all {
+            kotlinOptions.freeCompilerArgs = listOf("-Xexplicit-api=strict")
             kotlinOptions.jvmTarget = Versions.jvm
         }
     }

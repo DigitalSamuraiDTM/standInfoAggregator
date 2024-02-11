@@ -17,5 +17,5 @@ private fun previewHidDeviceView() {
         state = HidDeviceViewState.preview(), modifier = Modifier
             .padding(5.dp)
             .background(Color.LightGray)
-    )
+    ){}
 }

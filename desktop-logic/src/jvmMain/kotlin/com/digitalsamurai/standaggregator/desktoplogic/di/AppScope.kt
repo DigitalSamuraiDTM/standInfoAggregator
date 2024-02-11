@@ -7,4 +7,4 @@ import javax.inject.Scope
  * Top app scope
  */
 @Scope
-annotation class AppScope
+public annotation class AppScope
